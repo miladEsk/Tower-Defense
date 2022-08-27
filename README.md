@@ -1,15 +1,14 @@
 # Tower-Defense
 
-# APk file address : https://github.com/miladEsk/Tower-Defense/tree/master/Export
-
-# Screenshots of the project address : https://github.com/miladEsk/Tower-Defense/tree/master/Assets/TutorialInfo/Screenshots
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+# Screenshots of the project address :
 [![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%201.png)
 [![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%202.png)
 [![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%203.png)
+
+# APk file address : [![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/tree/master/Export)
 
 ### Installation
 
