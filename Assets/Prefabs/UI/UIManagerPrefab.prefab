@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5818060576189041095}
   - component: {fileID: 5818060576189041094}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: UIManagerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b3d2c6f7922bb448fd5ce3df6722eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  coinText: {fileID: 0}
+  currentWaveText: {fileID: 0}
+  maxWaveText: {fileID: 0}
+  showWaveBannerText: {fileID: 0}
+  sellTowerText: {fileID: 0}
+  createTowerPanel: {fileID: 0}
+  win: {fileID: 0}
+  winPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
   towers:
   - {fileID: 11400000, guid: e83905e3ac00e61449b873efab09f7df, type: 2}
   - {fileID: 11400000, guid: 91428f3fd1c374147906c3baf91660f2, type: 2}
   - {fileID: 11400000, guid: 385df81a57af2354f9010f5d32d06dcf, type: 2}
+  - {fileID: 11400000, guid: 51b31391282e920408dfdcb4992f9c99, type: 2}
   towerPlaces:
   - {fileID: 0}
   - {fileID: 0}
@@ -56,4 +67,3 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  createTowerPanel: {fileID: 0}

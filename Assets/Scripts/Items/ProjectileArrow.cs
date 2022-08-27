@@ -42,12 +42,16 @@ public class ProjectileArrow : MonoBehaviour {
 
         float angle = UtilsClass.GetAngleFromVectorFloat(moveDir);
         transform.eulerAngles = new Vector3(0, 0, angle);
+    }
 
-        float destroySelfDistance = 1f;
-        if (Vector3.Distance(transform.position, targetPosition) < destroySelfDistance) {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
             enemy.GetComponent<IDamageable>().Damage(damageAmount);
             Destroy(gameObject);
         }
+        
     }
     #endregion
 }

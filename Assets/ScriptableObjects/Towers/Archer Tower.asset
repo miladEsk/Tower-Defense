@@ -17,6 +17,7 @@ MonoBehaviour:
   shootInterval: 2
   damage: 30
   playerCount: 0
+  playerMoveSpeed: 0
   sprites:
   - {fileID: 21300000, guid: 0a0b70cfd52e574419e377163923b946, type: 3}
   - {fileID: 21300000, guid: d1371205877538447ad2ea473179746d, type: 3}

@@ -28,8 +28,10 @@ public class CharacterManager : MonoBehaviour, IDamageable
     {
         animator = GetComponent<Animator>();
 
+        Color healthbarColor = isEnemy ? Color.red : Color.green;
+
         healthSystem = new HealthSystem(100);
-        World_Bar healthBar = new World_Bar(transform, new Vector3(0.12f, 0.42f), new Vector3(7, 1.5f), Color.grey, Color.red, 1f, 1000, new World_Bar.Outline { color = Color.black, size = .5f });
+        World_Bar healthBar = new World_Bar(transform, new Vector3(0.12f, 0.42f), new Vector3(7, 1.5f), Color.grey, healthbarColor, 1f, 1000, new World_Bar.Outline { color = Color.black, size = .5f });
         healthSystem.OnHealthChanged += (object sender, EventArgs e) => {
             healthBar.SetSize(healthSystem.GetHealthNormalized());
         };
