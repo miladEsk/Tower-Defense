@@ -7,7 +7,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%201.png))
+[![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%201.png)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%202.png)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%203.png)
 
 ### Installation
 
