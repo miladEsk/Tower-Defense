@@ -19,3 +19,9 @@ Clone the repo
    ```sh
    git clone https://github.com/miladEsk/Tower-Defense.git
    ```
+<!-- CONTACT -->
+## Contact
+
+Milad Eskandary - miladjdwidmw@gmail.com
+
+Project Link: [https://github.com/miladEsk/Tower-Defense](https://github.com/miladEsk/Tower-Defense)
