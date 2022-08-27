@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574a8cfc1c4976b4d99661c975fefb2c, type: 3}
+  m_Name: Wizard Tower
+  m_EditorClassIdentifier: 
+  buildPrice: 100
+  range: 30
+  shootInterval: 2
+  damage: 40
+  sprites:
+  - {fileID: 21300000, guid: 0528d4dc9102ed149af7e44771f55305, type: 3}
+  - {fileID: 21300000, guid: 847b95d1d89897d43b748c2e92b48efd, type: 3}
+  - {fileID: 21300000, guid: f6165d8f043547b4f89e7568f50dd048, type: 3}
+  arrowPrefab: {fileID: 5063737315075505783, guid: 6c14d41b27057814388f1673e0417741, type: 3}
+  towerPrefab: {fileID: 2600464402483628528, guid: 8c18465d08f493a4884519d5ee82b908, type: 3}
