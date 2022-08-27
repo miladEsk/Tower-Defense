@@ -4,6 +4,11 @@
 
 # Screenshots of the project address : https://github.com/miladEsk/Tower-Defense/tree/master/Assets/TutorialInfo/Screenshots
 
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]]([https://example.com](https://github.com/miladEsk/Tower-Defense/blob/master/Assets/TutorialInfo/Screenshots/Screenshot%201.png))
+
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
