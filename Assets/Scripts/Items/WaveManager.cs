@@ -49,7 +49,7 @@ public class WaveManager : MonoBehaviour
     {
         
         canStartWave = false;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
 
         if(currentWave < 5)
         {

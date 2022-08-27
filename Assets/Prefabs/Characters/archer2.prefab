@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -175,11 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6d09b676ad64a4f9c6fc7027af4d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95814188212738746}
-  isFacingRight: 1
   enemyIndex: 0
-  attackClip: {fileID: 8300000, guid: 9c22eea25e7875348832fdeeff708cd1, type: 3}
-  deadClip: {fileID: 8300000, guid: e870205a528a51644983610e0bdfa735, type: 3}
+  collectiveMaxCoin: 0
 --- !u!114 &2837984537702238249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,3 +191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95814188212738746}
   isFacingRight: 1
+  isEnemy: 1
+  attackClip: {fileID: 8300000, guid: 9c22eea25e7875348832fdeeff708cd1, type: 3}
+  deadClip: {fileID: 8300000, guid: e870205a528a51644983610e0bdfa735, type: 3}

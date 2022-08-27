@@ -14,6 +14,7 @@ public class CreateTowerPanelSetup : MonoBehaviour
     private TMP_Text wizardBuildPriceText;
     [SerializeField]
     private TMP_Text queenArcherPriceText;
+
     [Header("Lists")]
     [SerializeField]
     private List<TowerScriptableObject> towers;

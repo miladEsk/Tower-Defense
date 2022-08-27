@@ -5,8 +5,10 @@ public class Tower : MonoBehaviour {
     public int towerIndex = 0;
     #endregion
 
+    #region Serialized Fields
     [SerializeField]
     private AudioClip shootClip;
+    #endregion
 
     #region Private Fields
     private float range;

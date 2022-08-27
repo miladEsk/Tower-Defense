@@ -27,13 +27,13 @@ public class ProjectileArrow : MonoBehaviour {
     }
 
     private void Update() {
-        if (enemy == null || enemy.IsDead()) {
+        if (enemy == null || enemy.gameObject.GetComponent<CharacterManager>().IsDead()) {
             // Enemy already dead
             Destroy(gameObject);
             return;
         }
 
-        Vector3 targetPosition = enemy.GetPosition();
+        Vector3 targetPosition = enemy.gameObject.GetComponent<CharacterManager>().GetPosition();
         Vector3 moveDir = (targetPosition - transform.position).normalized;
 
         float moveSpeed = 130f;
@@ -45,7 +45,7 @@ public class ProjectileArrow : MonoBehaviour {
 
         float destroySelfDistance = 1f;
         if (Vector3.Distance(transform.position, targetPosition) < destroySelfDistance) {
-            enemy.Damage(damageAmount);
+            enemy.GetComponent<IDamageable>().Damage(damageAmount);
             Destroy(gameObject);
         }
     }

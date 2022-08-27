@@ -24,7 +24,7 @@ public class HealthSystem {
     public event EventHandler OnDead;
 
     private int healthMax;
-    private int health;
+    private int health = 100;
 
     public HealthSystem(int healthMax) {
         this.healthMax = healthMax;

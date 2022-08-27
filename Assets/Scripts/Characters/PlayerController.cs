@@ -1,19 +1,9 @@
-using CodeMonkey.Utils;
-using System;
 using UnityEngine;
 
-public class PlayerController : CharacterManager, IDamageable
+public class PlayerController : MonoBehaviour
 {
     #region Public Fields
     public Transform target;
-    #endregion
-
-    #region Serialized Fields
-    [Header("Audios")]
-    [SerializeField]
-    private AudioClip attackClip;
-    [SerializeField]
-    private AudioClip deadClip;
     #endregion
 
     #region Private Fields
@@ -26,10 +16,17 @@ public class PlayerController : CharacterManager, IDamageable
     private Vector2 initialPosition;
     private Transform idlePosition;
 
-    private HealthSystem healthSystem;
+    private CharacterManager characterManager;
+
     #endregion
 
     #region Private Methods
+
+    private void Awake()
+    {
+        characterManager = GetComponent<CharacterManager>();
+    }
+
     private void Start()
     {
         idlePosition = target;
@@ -40,23 +37,17 @@ public class PlayerController : CharacterManager, IDamageable
         shootTimerMax = ScriptableObjectManager.Instance.GetTower(1).shootInterval;
         moveSpeed = ScriptableObjectManager.Instance.GetTower(1).playerMoveSpeed;
 
-        healthSystem = new HealthSystem(100);
-        World_Bar healthBar = new World_Bar(transform, new Vector3(0.12f, 0.42f), new Vector3(7, 1.5f), Color.grey, Color.red, 1f, 1000, new World_Bar.Outline { color = Color.black, size = .5f });
-        healthSystem.OnHealthChanged += (object sender, EventArgs e) => {
-            healthBar.SetSize(healthSystem.GetHealthNormalized());
-        };
-
-        Look(target.position); 
+        characterManager.Look(target.position); 
     }
 
     private void Update()
     {
         EnemyController enemy = GetClosestEnemy();
-        Look(target.position);
+        characterManager.Look(target.position);
         
         if (enemy != null)
         {
-            target.position = enemy.GetPosition();
+            target.position = enemy.gameObject.GetComponent<CharacterManager>().GetPosition();
             
             shootTimer -= Time.deltaTime;
 
@@ -66,10 +57,8 @@ public class PlayerController : CharacterManager, IDamageable
                 {
                     shootTimer = shootTimerMax;
 
-                    AttackAnimation();
+                    characterManager.AttackAnimation();
                     enemy.GetComponent<IDamageable>().Damage(damageAmount);
-                    if (attackClip)
-                        AudioManager.Instance.PlaySound(attackClip);
                     initialPosition = transform.position;
                     currentTimeOnPath = 0;
                 }
@@ -81,7 +70,7 @@ public class PlayerController : CharacterManager, IDamageable
         {
             initialPosition = transform.position;
             currentTimeOnPath = 0;
-            WalkAnimation(false);
+            characterManager.WalkAnimation(false);
         }
         else
             Walk(idlePosition);
@@ -95,7 +84,7 @@ public class PlayerController : CharacterManager, IDamageable
 
     private void Walk(Transform distination)
     {
-        WalkAnimation(true);
+        characterManager.WalkAnimation(true);
         Vector3 startPosition = initialPosition;
         Vector3 endPosition = distination.position;
         float pathLength = Vector3.Distance(startPosition, endPosition);
@@ -103,34 +92,6 @@ public class PlayerController : CharacterManager, IDamageable
 
         currentTimeOnPath += Time.deltaTime;
         gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
-    }
-    #endregion
-
-    #region Public Methods
-    public void Damage(int damageAmount)
-    {
-        Vector3 bloodDir = UtilsClass.GetRandomDir();
-        Blood_Handler.SpawnBlood(GetPosition(), bloodDir);
-
-        DamagePopup.Create(GetPosition(), damageAmount, false);
-
-        healthSystem.Damage(damageAmount);
-        if (IsDead())
-        {
-            FlyingBody.Create(GameAssets.i.pfEnemyFlyingBody, GetPosition(), bloodDir);
-            if (deadClip)
-                AudioManager.Instance.PlaySound(deadClip);
-            Destroy(gameObject);
-        }
-        else
-        {
-            transform.position += bloodDir * 2.5f;
-        }
-    }
-
-    public bool IsDead()
-    {
-        return healthSystem.IsDead();
     }
     #endregion
 }

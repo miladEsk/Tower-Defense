@@ -29,9 +29,15 @@ public class UIManager : MonoBehaviour
     private TMP_Text maxWaveText;
     [SerializeField]
     private TMP_Text showWaveBannerText;
+
+    [SerializeField]
+    private TMP_Text sellTowerText;
+
     [Header("Panels")]
     [SerializeField]
     private GameObject createTowerPanel;
+    [SerializeField]
+    private GameObject win;
     [SerializeField]
     private GameObject winPanel;
     [SerializeField]
@@ -57,11 +63,13 @@ public class UIManager : MonoBehaviour
     public void ChangeHealth(int damageAmount)
     {
         currentHealth -= damageAmount;
-        healthText.text = currentHealth + "";
         if(currentHealth <= 0)
         {
             Time.timeScale = 0;
+            healthText.text = 0 + "";
         }
+        else
+            healthText.text = currentHealth + "";
     }
 
     public void AddCoin(int coin)
@@ -85,7 +93,19 @@ public class UIManager : MonoBehaviour
 
     public void Win()
     {
-        winPanel.GetComponent<Animator>().SetTrigger("Show");
+        win.GetComponent<Animator>().SetTrigger("Show");
+        Invoke(nameof(WinPanel), 2f);
+    }
+
+    private void WinPanel()
+    {
+        winPanel.SetActive(true);
+    }
+
+    public void ChangeSellTower()
+    {
+        towerIndex = towerPlaces[towerPlaceIndex].gameObject.GetComponentInChildren<Tower>().towerIndex;
+        sellTowerText.text = towers[towerIndex].buildPrice / 2 + "";
     }
     #endregion
 

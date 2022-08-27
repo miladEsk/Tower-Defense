@@ -175,11 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1794be38af68b4cb701083452767ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95721569756477734}
-  isFacingRight: 1
   target: {fileID: 0}
-  attackClip: {fileID: 8300000, guid: 9c22eea25e7875348832fdeeff708cd1, type: 3}
-  deadClip: {fileID: 8300000, guid: 0fb936e8e3ba3a44e9952565df4ed7d3, type: 3}
 --- !u!114 &5779479387999320484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,3 +190,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95721569756477734}
   isFacingRight: 1
+  attackClip: {fileID: 8300000, guid: 811d36b4845c63a42a32f3e13ab3a5d9, type: 3}
+  deadClip: {fileID: 8300000, guid: 0fb936e8e3ba3a44e9952565df4ed7d3, type: 3}

@@ -59,6 +59,7 @@ public class TowerPlace : MonoBehaviour
     public void SellTowerPanel()
     {
         UIManager.towerPlaceIndex = towerIndex;
+        UIManager.Instance.ChangeSellTower();
         sellTowerPanel.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(transform.localPosition);
         isOpenSells[towerIndex] = !isOpenSells[towerIndex];
         sellTowerPanel.GetComponent<Animator>().SetBool("IsOpen", isOpenSells[towerIndex]);
