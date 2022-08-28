@@ -23,7 +23,7 @@ public class HealthSystem {
     public event EventHandler OnHealed;
     public event EventHandler OnDead;
 
-    private int healthMax;
+    private int healthMax = 100;
     private int health = 100;
 
     public HealthSystem(int healthMax) {

@@ -24,8 +24,8 @@ public class EnemySpawner : MonoBehaviour {
 
     #region Public Methods
     public void SpawnEnemy() {
-        Transform enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], enemySpawnPosition.position/*transform.position*//* + UtilsClass.GetRandomDir() * Random.Range(50, 100f)*/, Quaternion.identity);
-        enemy.parent = transform;
+        Transform enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], enemySpawnPosition.position, Quaternion.identity);
+        enemy.transform.parent = transform;
     }
     #endregion
 }

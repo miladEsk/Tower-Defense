@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Private Methods
-
     private void Awake()
     {
         characterManager = GetComponent<CharacterManager>();
@@ -37,18 +36,18 @@ public class PlayerController : MonoBehaviour
         shootTimerMax = ScriptableObjectManager.Instance.GetTower(1).shootInterval;
         moveSpeed = ScriptableObjectManager.Instance.GetTower(1).playerMoveSpeed;
 
-        characterManager.Look(target.position); 
+        characterManager.Look(target.position);
     }
 
     private void Update()
     {
         EnemyController enemy = GetClosestEnemy();
         characterManager.Look(target.position);
-        
+
         if (enemy != null)
         {
             target.position = enemy.gameObject.GetComponent<CharacterManager>().GetPosition();
-            
+
             shootTimer -= Time.deltaTime;
 
             if (Vector3.Distance(transform.position, target.position) <= 10f)

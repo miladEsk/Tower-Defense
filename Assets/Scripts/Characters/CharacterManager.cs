@@ -87,10 +87,10 @@ public class CharacterManager : MonoBehaviour, IDamageable
             {
                 int collectiveMaxCoin = GetComponent<EnemyController>().collectiveMaxCoin;
                 UIManager.Instance.AddCoin(UnityEngine.Random.Range(collectiveMaxCoin / 2, collectiveMaxCoin));
-                EnemyController.enemies.Remove(GetComponent<EnemyController>());
             }
             if (deadClip)
                 AudioManager.Instance.PlaySound(deadClip);
+
             Destroy(gameObject);
         }
         else

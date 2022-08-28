@@ -41,6 +41,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject winPanel;
     [SerializeField]
+    private GameObject lose;
+    [SerializeField]
+    private GameObject losePanel;
+    [SerializeField]
     private GameObject pausePanel;
     
     [Header("Lists")]
@@ -65,8 +69,9 @@ public class UIManager : MonoBehaviour
         currentHealth -= damageAmount;
         if(currentHealth <= 0)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             healthText.text = 0 + "";
+            Lose();
         }
         else
             healthText.text = currentHealth + "";
@@ -100,6 +105,18 @@ public class UIManager : MonoBehaviour
     private void WinPanel()
     {
         winPanel.SetActive(true);
+    }
+
+    public void Lose()
+    {
+        lose.GetComponent<Animator>().SetTrigger("Show");
+        Invoke(nameof(LosePanel), 2f);
+    }
+
+    private void LosePanel()
+    {
+        losePanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ChangeSellTower()

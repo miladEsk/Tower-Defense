@@ -64,8 +64,17 @@ public class EnemyController : MonoBehaviour
     #region Private Methods
     private void Awake()
     {
-        characterManager = GetComponent<CharacterManager>();
-        enemies.Add(this);
+        characterManager = GetComponent<CharacterManager>();        
+    }
+
+    private void OnEnable()
+    {
+        Invoke(nameof(AddEnemyToList), 0.1f);
+    }
+
+    private void OnDisable()
+    {
+        enemies.Remove(this);
     }
 
     private void Start()
@@ -77,6 +86,11 @@ public class EnemyController : MonoBehaviour
         initialPosition = transform.position;
 
         characterManager.Look(waypoint.position);
+    }
+
+    private void AddEnemyToList()
+    {
+        enemies.Add(this);
     }
 
     private void Update()
@@ -107,7 +121,6 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                //enemies.Remove(this);
                 UIManager.Instance.ChangeHealth(damageAmount);
                 Destroy(gameObject);
             }
